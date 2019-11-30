@@ -21,10 +21,10 @@ try:
 						except NameError: latest = now.timestamp() * 1000
 						newest = now.timestamp() * 1000
 						between = newest - latest
-						latest = newest
 						try: avg
 						except NameError: avg = between
 						avg = (avg + between) / 2
+						latest = newest
 						hour = str(now.hour)
 						minute = str(now.minute)
 						second = str(now.second)
@@ -44,6 +44,7 @@ except:
 	minutes = seconds / 60
 	hours = minutes / 60
 	days = hours / 24
+	efficiency = primeNumber / seconds
 	if(seconds <= 60):
 		print("\rran for: " + str(int(seconds)) + " second(s)")
 	if(seconds <= 3600 and seconds > 60):
@@ -52,5 +53,6 @@ except:
 		print("\rran for: " + str(int(hours)) + " hour(s)")
 	if(seconds <= 315360000 and seconds > 86400):
 		print("\rran for: " + str(int(days)) + " day(s)")
+	print("efficiency: " + str("%.2f" % efficiency) + " Pps")
 	print("amount: " + str(count) + ", highest: " + str(primeNumber) + ", last try (ms): " + str(int(between)) + ", average per try (ms): " + str(int(avg)))
 	exit()
