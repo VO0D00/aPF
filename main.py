@@ -44,7 +44,7 @@ except:
 	minutes = seconds / 60
 	hours = minutes / 60
 	days = hours / 24
-	efficiency = primeNumber / seconds
+	efficiency = count / seconds
 	if(seconds <= 60):
 		print("\rran for: " + str(int(seconds)) + " second(s)")
 	if(seconds <= 3600 and seconds > 60):
